@@ -1,4 +1,5 @@
 import attractions.Attraction;
+import behaviours.IReviewed;
 import stalls.Stall;
 
 import java.util.ArrayList;
@@ -27,5 +28,22 @@ public class ThemePark {
 
     public void addStall(Stall stall){
         stalls.add(stall);
+    }
+
+    public ArrayList getAllReviewed(){
+        ArrayList<IReviewed> reviewed = new ArrayList<>();
+
+        for (Attraction attraction : attractions){
+            if (attraction instanceof IReviewed){
+                reviewed.add(attraction);
+            }
+        }
+
+        for (Stall stall : stalls){
+            if (stall instanceof IReviewed){
+                reviewed.add(stall);
+            }
+        }
+        return reviewed;
     }
 }
