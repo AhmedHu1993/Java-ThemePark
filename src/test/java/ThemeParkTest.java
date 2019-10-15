@@ -73,4 +73,9 @@ public class ThemeParkTest {
         assertEquals(rollerCoaster, visitor1.getVisitedAttraction().get(0));
         assertEquals(1, rollerCoaster.getVisitCount());
     }
+
+    @Test
+    public void checkHashMapOfReviews(){
+        assertEquals(7, themePark.allReviews().size());
+    }
 }
