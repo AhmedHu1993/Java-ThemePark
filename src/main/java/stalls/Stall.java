@@ -1,6 +1,6 @@
 package stalls;
 
-import interfaces.IReviewed;
+import behaviours.IReviewed;
 
 public abstract class Stall implements IReviewed {
 

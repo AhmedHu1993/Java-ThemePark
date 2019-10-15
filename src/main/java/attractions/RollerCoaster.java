@@ -1,7 +1,7 @@
 package attractions;
 
-import interfaces.ISecurity;
-import interfaces.ITicketed;
+import behaviours.ISecurity;
+import behaviours.ITicketed;
 import people.Visitor;
 
 public class RollerCoaster  extends Attraction implements ISecurity, ITicketed {

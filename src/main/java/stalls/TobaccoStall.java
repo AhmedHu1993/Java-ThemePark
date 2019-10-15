@@ -1,6 +1,6 @@
 package stalls;
 
-import interfaces.ISecurity;
+import behaviours.ISecurity;
 import people.Visitor;
 
 public class TobaccoStall extends Stall implements ISecurity {

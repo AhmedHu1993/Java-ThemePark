@@ -1,6 +1,6 @@
 package attractions;
 
-import interfaces.ITicketed;
+import behaviours.ITicketed;
 import people.Visitor;
 
 public class Dodgems extends Attraction implements ITicketed {
