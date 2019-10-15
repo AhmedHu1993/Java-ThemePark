@@ -4,6 +4,7 @@ import attractions.Playground;
 import attractions.RollerCoaster;
 import org.junit.Before;
 import org.junit.Test;
+import people.Visitor;
 import stalls.CandyflossStall;
 import stalls.IceCreamStall;
 import stalls.ParkingSpot;
@@ -23,6 +24,8 @@ public class ThemeParkTest {
     CandyflossStall candyflossStall;
     IceCreamStall iceCreamStall;
     TobaccoStall tobaccoStall;
+
+    Visitor visitor1;
 
     @Before
     public void before(){
@@ -45,6 +48,8 @@ public class ThemeParkTest {
         themePark.addStall(candyflossStall);
         themePark.addStall(iceCreamStall);
         themePark.addStall(tobaccoStall);
+
+        visitor1 = new Visitor(18, 190, 75);
     }
 
     @Test
@@ -60,5 +65,12 @@ public class ThemeParkTest {
     @Test
     public void getReviewed() {
         assertEquals(7, themePark.getAllReviewed().size());
+    }
+
+    @Test
+    public void checkVisitingForVisitorAndAttraction(){
+        themePark.visit(visitor1, rollerCoaster);
+        assertEquals(rollerCoaster, visitor1.getVisitedAttraction().get(0));
+        assertEquals(1, rollerCoaster.getVisitCount());
     }
 }
