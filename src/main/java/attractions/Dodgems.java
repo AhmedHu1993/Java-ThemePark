@@ -19,4 +19,9 @@ public class Dodgems extends Attraction implements ITicketed {
         }
         return defaultPrice();
     }
+
+    @Override
+    public boolean isAllowedTo(Visitor visitor) {
+        return true;
+    }
 }

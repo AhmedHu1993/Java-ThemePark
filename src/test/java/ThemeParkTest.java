@@ -78,4 +78,9 @@ public class ThemeParkTest {
     public void checkHashMapOfReviews(){
         assertEquals(7, themePark.allReviews().size());
     }
+
+    @Test
+    public void getAllAllowedIReviewedPlacesForVisitor(){
+        assertEquals(6, themePark.allAllowedFor(visitor1).size());
+    }
 }
