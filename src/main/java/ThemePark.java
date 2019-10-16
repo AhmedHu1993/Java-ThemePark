@@ -33,7 +33,7 @@ public class ThemePark {
         stalls.add(stall);
     }
 
-    public ArrayList getAllReviewed(){
+    public ArrayList<IReviewed> getAllReviewed(){
         ArrayList<IReviewed> reviewed = new ArrayList<>();
 
         for (Attraction attraction : attractions){
@@ -58,11 +58,10 @@ public class ThemePark {
     public HashMap allReviews(){
         HashMap<String, Integer> allReviews = new HashMap<>();
 
-        for (Object place : getAllReviewed()){
+        for (IReviewed place : getAllReviewed()){
 
-            IReviewed site = (IReviewed)place;
-            String name = site.getName();
-            int rating = site.getRating();
+            String name = place.getName();
+            int rating = place.getRating();
 
             allReviews.put(name, rating);
         }
@@ -72,10 +71,10 @@ public class ThemePark {
     public ArrayList allAllowedFor(Visitor visitor){
         ArrayList<IReviewed> allAllowed = new ArrayList<>();
 
-        for (Object place : getAllReviewed()){
+        for (IReviewed place : getAllReviewed()){
             ISecurity site = (ISecurity) place;
             if (site.isAllowedTo(visitor)) {
-                allAllowed.add((IReviewed) place);
+                allAllowed.add(place);
             }
         }
         return allAllowed;
